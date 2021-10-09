@@ -39,9 +39,22 @@ public class ActiveCookieTest {
            "2018-12-08"
         };
         App.main(args);
+        
+        // better ways to test, as inherent order could be any
         assertEquals(String.format(
           "fbcn5UAVanZf6UtG%n" + 
           "SAZuXPGUrfbcn5UA%n" + 
           "4sMM2LxV07bPJzwf%n"), bytes.toString());
+   }
+
+   @Test
+   public void noCookiesOutputed() throws Exception {
+       String[] args = new String[] {
+           System.getenv().get("COOKIE_DATA_ABSOLUTE_PATH"),
+           "-d",
+           "2018-12-05"
+        };
+        App.main(args);
+        assertEquals("", bytes.toString());
    }
 }
