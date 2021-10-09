@@ -8,6 +8,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class App {
+    /**
+     * Main program controller, takes in cookie data and prints out most active cookies
+     * 
+     * @param args, of length 3 representing relative path of csv file, -d flag, and UTC formatted date
+     * @throws Exception, FileNotFoundException or IOException
+     */
     public static void main(String[] args) throws Exception {
         // read in arguments, with 0 = relative path, 1 = -d parameter, 2 = timestamp
         String path = args[0];
